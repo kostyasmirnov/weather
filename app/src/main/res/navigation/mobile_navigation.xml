@@ -3,12 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_cities_list">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_cities_list"
         android:name="com.example.weather.ui.weather.WeatherFragment"
-        android:label="@string/title_my_weather"
-        tools:layout="@layout/fragment_list_of_cities" />
+        android:label="@string/title_list_of_cities"
+        tools:layout="@layout/fragment_list_of_cities">
+        <action
+            android:id="@+id/action_cities_list_to_city_details"
+            app:destination="@id/navigation_city_details"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_city_details"
+        android:name="com.example.weather.ui.weather.CityDetailsFragment"
+        android:label="@string/title_city_details"
+        tools:layout="@layout/fragment_city_details">
+        <argument
+            android:name="cityName"
+            app:argType="string" />
+        <argument
+            android:name="temperature"
+            app:argType="float" />
+    </fragment>
 
 </navigation>
