@@ -4,15 +4,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weather.databinding.ItemCityBinding
-import com.example.weather.ui.weather.model.Cities
+import com.example.weather.ui.weather.model.City
 
 class CitiesAdapter(
-    private val onCityClick: (Cities) -> Unit
+    private val onCityClick: (City) -> Unit
 ) : RecyclerView.Adapter<CitiesAdapter.CitiesViewHolder>() {
 
-    private var cities: List<Cities> = emptyList()
+    private var cities: List<City> = emptyList()
 
-    fun updateCities(newCities: List<Cities>) {
+    fun updateCities(newCities: List<City>) {
         cities = newCities
         notifyDataSetChanged()
     }
@@ -29,10 +29,10 @@ class CitiesAdapter(
     }
 
     inner class CitiesViewHolder(private val binding: ItemCityBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(city: Cities) {
+        fun bind(city: City) {
             with(binding) {
                 cityName.text = city.city
-                cityTemperature.text = "${city.grades}°C"
+                cityTemperature.text = "${city.grades} °C"
                 root.setOnClickListener { onCityClick(city) }
             }
         }

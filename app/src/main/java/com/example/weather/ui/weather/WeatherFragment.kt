@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.weather.databinding.FragmentListOfCitiesBinding
 import com.example.weather.ui.weather.adapter.CitiesAdapter
-import com.example.weather.ui.weather.model.Cities
+import com.example.weather.ui.weather.model.City
 
 class WeatherFragment : Fragment() {
 
@@ -28,7 +28,7 @@ class WeatherFragment : Fragment() {
 
         setupRecyclerView()
         
-        weatherViewModel.cities.observe(viewLifecycleOwner) { cities ->
+        weatherViewModel.city.observe(viewLifecycleOwner) { cities ->
             citiesAdapter.updateCities(cities)
         }
 
@@ -45,7 +45,7 @@ class WeatherFragment : Fragment() {
         }
     }
 
-    private fun navigateToCityDetails(city: Cities) {
+    private fun navigateToCityDetails(city: City) {
         val action = WeatherFragmentDirections.actionCitiesListToCityDetails(
             cityName = city.city,
             temperature = city.grades.toFloat(),

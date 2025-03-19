@@ -1,30 +1,27 @@
 package com.example.weather.ui.weather
 
-import android.icu.text.DateFormat
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.weather.ui.weather.model.Cities
-import java.time.LocalDate
-import java.util.Date
+import com.example.weather.ui.weather.model.City
 
 class WeatherViewModel : ViewModel() {
 
-    private val _cities = MutableLiveData<List<Cities>>()
-    val cities: LiveData<List<Cities>> = _cities
+    private val _city = MutableLiveData<List<City>>()
+    val city: LiveData<List<City>> = _city
 
     init {
         loadCities()
     }
 
     private fun loadCities() {
-        val citiesList = listOf(
-            Cities("Москва", 20.0, ""),
-            Cities("Санкт-Петербург", 18.5, ""),
-            Cities("Новосибирск", 22.3, ""),
-            Cities("Екатеринбург", 19.8, ""),
-            Cities("Казань", 21.5, "")
+        val cityLists = listOf(
+            City("Москва", 20.0, ""),
+            City("Санкт-Петербург", 18.5, ""),
+            City("Новосибирск", 22.3, ""),
+            City("Екатеринбург", 19.8, ""),
+            City("Казань", 21.5, "")
         )
-        _cities.value = citiesList
+        _city.value = cityLists
     }
 }

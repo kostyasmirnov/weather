@@ -23,7 +23,7 @@ class CityDetailsFragment : Fragment() {
         _binding = FragmentCityDetailsBinding.inflate(inflater, container, false)
         
         setupViews()
-        setupClickListeners()
+        initializeClickListeners()
         
         return binding.root
     }
@@ -31,11 +31,11 @@ class CityDetailsFragment : Fragment() {
     private fun setupViews() {
         with(binding) {
             cityName.text = args.cityName
-            cityTemperature.text = "${args.temperature}°C"
+            cityTemperature.text = "${args.temperature}"
         }
     }
 
-    private fun setupClickListeners() {
+    private fun initializeClickListeners() {
         binding.imageView.setOnClickListener {
             findNavController().navigateUp()
         }

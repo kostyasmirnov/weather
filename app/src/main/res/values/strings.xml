@@ -5,4 +5,5 @@
     <string name="title_city_details">Детали города</string>
     <string name="title_my_weather">Погода</string>
     <string name="title_all_cities">Все города</string>
+    <string name="celsiusValue">°C</string>
 </resources>
