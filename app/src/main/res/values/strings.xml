@@ -1,6 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">weather</string>
-    <string name="title_my_weather">Weather</string>
-    <string name="title_all_cities">All Cities</string>
     <string name="title_list_of_cities">Список городов</string>
+    <string name="title_city_details">Детали города</string>
+    <string name="title_my_weather">Погода</string>
+    <string name="title_all_cities">Все города</string>
+    <string name="celsiusValue">°C</string>
 </resources>

@@ -1,8 +1,7 @@
 package com.example.weather.ui.weather.model
 
-data class Cities (
+data class City (
     val city: String,
     val grades: Double,
     val date: String,
-    val city_id: Int,
 )
